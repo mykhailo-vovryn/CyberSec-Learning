@@ -45,6 +45,22 @@ Wireshark filters:
 
 - `kerberos.SNameString == "krbtg"` 
 ---
-# Tunneling Traffic
+# Tunnelling Traffic
+Attackers use tunnelling to bypass security perimeters using the standart and trusted protocols like ICMP and DNS.
+## ICMP Analysis
+As ICMP is trusted network layer protocol, sometimes it used for Dos attacks, data exfiltration and C2 tunnelling.
+I think its good practise to limit ICMP traffic in private network.
 
+Wireshark filter:
+- `icmp`
+- `data.len > 64 and icmp` - but attackers can modify len of ICMP
+## DNS Analysis
+Attacker can create domain address and configure it as a C2 channel. After exploitation attacker sends DNS queries to the C2 server.
+Mostly these queries are longer than default DNS queries.
 
+Wireshark filter:
+- `dns`
+- `dns contains "dnscat"` - known pattern
+- `dns.qry.name.len > 15 and !mdns` - !mdns disable local link dev queries
+---
+# CPA(cleartext protocol Analysis) FTP
