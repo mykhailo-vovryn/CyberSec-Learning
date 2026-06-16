@@ -13,6 +13,27 @@ EVTX — формат файлів логів.
 |---|---|---|---|
 |**4624** (Successful Logon)|Виявлення підозрілих/мережевих логінів та точки початку атаки|Логується на машині, до якої здійснюється доступ|**Шумний**. На завантажених серверах — сотні подій на хвилину|
 |**4625** (Failed Logon)|Виявлення брутфорсу, password spraying чи сканування на вразливості|Логується на машині, до якої здійснюється доступ|**Непослідовний**. Багато нюансів, які можуть призвести до неправильного розуміння події|
+#### Logon types for 4624
+I will cover 2-11 logon types:
+##### Logon Type 2
+Physical login. User must be next to computer for login
+##### Logon type 3 
+Access to SMB, psexec
+##### Logon type 4
+Task Scheduler
+##### Logon type 5
+Run windows services
+##### Logon type 7
+Win unlock
+##### Logon type 8
+Credentials in file
+##### Logon type 9
+Process with new credential created
+##### Logon type 10
+RDP
+##### Logon type 11
+logon with cache data.
+
 
 ### Керування користувачами
 
