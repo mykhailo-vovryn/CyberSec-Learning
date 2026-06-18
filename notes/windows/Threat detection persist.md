@@ -4,8 +4,6 @@
 > — [MITRE ATT&CK TA0011](https://attack.mitre.org/tactics/TA0011/)
 
 ## Persistence Overview
-...
-## Persistence Overview
 
 Persistence = maintaining reliable, long-term access that survives reboots
 and password changes.
